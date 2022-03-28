@@ -71,7 +71,9 @@
 
     async function showBalance(){
         let provider = window.solana;
-        let connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'), 'confirmed');
+        //let connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'), 'confirmed');
+        
+        let connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('devnet'), 'confirmed');
         connection.getBalance(provider.publicKey).then(function (value) {
             let solBalanceDiv = $('.sol-balance');
             solBalanceDiv.html('<b>Balance:</b> ' + (value/1000000000) + ' SOL');
